@@ -53,23 +53,11 @@ const Login = () => {
         body,
         config
       );
-      console.log(status);
-      if (status === 401) {
-        toast({
-          title: data,
-          status: "error",
-          duration: 5000,
-          isClosable: true,
-          position: "bottom",
-        });
-        setLoading(false);
-        return;
-      }
 
       toast({
         title: "Login Successful",
         status: "success",
-        duration: 5000,
+        duration: 1000,
         isClosable: true,
         position: "bottom",
       });
