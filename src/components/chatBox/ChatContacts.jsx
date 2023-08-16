@@ -5,6 +5,7 @@ import { Box, Button, Stack, Text, useToast } from "@chakra-ui/react";
 import { getHeadersConfig, getSender } from "../../utility/utility";
 import { AddIcon } from "@chakra-ui/icons";
 import ChatLoading from "./ChatLoading";
+import GroupChatModel from "./GroupChatModel";
 
 const ChatContacts = () => {
   const toast = useToast();
@@ -57,13 +58,15 @@ const ChatContacts = () => {
         justifyContent="space-between"
       >
         My Chats
-        <Button
-          display="flex"
-          fontSize={{ base: "17px", md: "10px", lg: "17px" }}
-          rightIcon={<AddIcon />}
-        >
-          New Group Chat
-        </Button>
+        <GroupChatModel>
+          <Button
+            display="flex"
+            fontSize={{ base: "17px", md: "10px", lg: "17px" }}
+            rightIcon={<AddIcon />}
+          >
+            New Group Chat
+          </Button>
+        </GroupChatModel>
       </Box>
 
       <Box
