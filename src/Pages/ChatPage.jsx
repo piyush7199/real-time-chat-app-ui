@@ -8,6 +8,7 @@ import ChatContacts from "../components/chatBox/ChatContacts";
 
 const ChatPage = () => {
   const { user } = ChatState();
+  const [fetchAgain, setFetchAgain] = useState(false);
 
   return (
     <div style={{ width: "100%" }}>
@@ -19,8 +20,10 @@ const ChatPage = () => {
         h="91.5vh"
         p="10px"
       >
-        {user && <ChatContacts />}
-        {user && <ChatInbox />}
+        {user && <ChatContacts fetchAgain={fetchAgain} />}
+        {user && (
+          <ChatInbox fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} />
+        )}
       </Box>
     </div>
   );

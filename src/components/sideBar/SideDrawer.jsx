@@ -42,6 +42,7 @@ const SideDrawer = () => {
 
   const onCloseSearch = () => {
     onClose();
+    setSearch("");
     setSearchRes([]);
     setLoading(false);
     setSearch("");
@@ -80,6 +81,7 @@ const SideDrawer = () => {
         isClosable: true,
         position: "bottom-left",
       });
+      setLoading(false);
     }
   };
 
@@ -112,6 +114,7 @@ const SideDrawer = () => {
         isClosable: true,
         position: "bottom-left",
       });
+      setLoading(false);
     }
   };
 
