@@ -23,7 +23,7 @@ import axios from "axios";
 import { getHeadersConfig } from "../../utility/utility";
 import UserListItems from "../sideBar/UserListItems";
 
-const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain }) => {
+const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
   const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { user, selectedChat, setSelectedChat } = ChatState();
@@ -65,6 +65,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain }) => {
       removeUser._id === user._id ? setSelectedChat() : setSelectedChat(data);
       setFetchAgain(!fetchAgain);
       setLoading(false);
+      fetchMessages();
     } catch (error) {
       console.log(error);
       toast({
